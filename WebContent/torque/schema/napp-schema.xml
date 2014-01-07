@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database xmlns="http://db.apache.org/torque/4.0/templates/database"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://db.apache.org/torque/4.0/templates/database
+        http://db.apache.org/torque/4.0/templates/database-strict.xsd"
+  name="nappstore"
+  defaultIdMethod="native">
+
+  <table name="student" description="Student Table">
+    <column
+      name="student_id"
+      required="true"
+      primaryKey="true"
+      type="INTEGER"
+      description="Student Id"/>
+    <column
+      name="name"
+      required="true"
+      type="VARCHAR"
+      size="128"
+      description="Student Name"/>
+  </table>
+</database>

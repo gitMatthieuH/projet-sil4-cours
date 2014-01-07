@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Napp" default="main" basedir=".">
+
+  <path id="ant-classpath">
+    <fileset dir="/home/matthieu/DEV/Java/Torque4-ant/lib">
+      <include name="*.jar"/>
+    </fileset>
+  </path>
+
+  <path id="runtime-classpath">
+    <fileset dir="WebContent/WEB-INF/lib/">
+      <include name="*.jar"/>
+    </fileset>
+  </path>
+
+  <taskdef
+    name="torque-generator"
+    classpathref="ant-classpath"
+    classname="org.apache.torque.ant.task.TorqueGeneratorTask"/>
+
+  <target name="generate"
+      description="==> generates sql + om classes">
+    <torque-generator 
+        packaging="classpath"
+        configPackage="org.apache.torque.templates.om"
+        sourceDir="torque/schema"
+    	projectRootDir="torque/"
+    	defaultOutputDir="torque/non-modifiable/generated-persistence">
+      <option key="torque.om.package" value="fr.iut2.sil4.data"/>
+      <option key="torque.database" value="mysql"/>
+    </torque-generator>
+    <torque-generator 
+        packaging="classpath"
+        configPackage="org.apache.torque.templates.sql"
+        sourceDir="torque/schema"
+        defaultOutputDir="torque/non-modifiable/generated-sql"
+    	projectRootDir="torque/non-modifiable/">
+      <option key="torque.database" value="mysql"/>
+    </torque-generator>
+  </target>
+
+
+  <target name="execute-sql">
+    <sql classpathref="ant-classpath"
+        driver="org.gjt.mm.mysql.Driver"
+        url="jdbc:mysql://localhost:3306/napp"
+        userid="sil4"
+        password="sil4"
+        onerror="continue"
+        src="torque/non-modifiable/generated-sql/napp-schema.sql"/>
+  </target>
+
+  <target name="clean">
+    <delete dir="target" />
+  </target>
+
+  <target name="main" description="build all" depends="generate">
+  </target>
+</project>
