@@ -30,7 +30,7 @@
 	</servlet-mapping>
 	<!--  fichiers d'accueil -->
 	<welcome-file-list>
-		<welcome-file>/napp1/index.jsp</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 	
 	

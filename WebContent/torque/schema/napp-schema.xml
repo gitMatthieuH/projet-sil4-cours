@@ -3,7 +3,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://db.apache.org/torque/4.0/templates/database
         http://db.apache.org/torque/4.0/templates/database-strict.xsd"
-  name="nappstore"
+  name="napp"
   defaultIdMethod="native">
 
   <table name="student" description="Student Table">
@@ -19,5 +19,21 @@
       type="VARCHAR"
       size="128"
       description="Student Name"/>
+  </table>
+
+  <table name="user" description="User Table" idMethod="idbroker">
+    <column
+      name="user_name"
+      required="true"
+      primaryKey="true"
+      type="VARCHAR"
+      size="128"
+      description="User Id"/>
+    <column
+      name="password"
+      required="true"
+      type="VARCHAR"
+      size="128"
+      description="User Password"/>
   </table>
 </database>

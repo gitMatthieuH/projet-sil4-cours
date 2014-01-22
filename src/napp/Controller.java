@@ -1,6 +1,7 @@
 package napp;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -14,12 +15,17 @@ import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.torque.Torque;
 import org.apache.torque.TorqueException;
 
+import fr.iut2.sil4.data.Student;
+import fr.iut2.sil4.data.StudentPeer;
+import fr.iut2.sil4.data.UserPeer;
+
 
 @SuppressWarnings("serial")
 public class Controller  extends HttpServlet {
 	
 	private String urlNapp;
 	private static final String TORQUE_PROPS = new String("/torque.properties");
+	private List<Student> studentsList;
 	
 	public void init() throws ServletException {
 		super.init();
@@ -39,6 +45,20 @@ public class Controller  extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
+		
+		try {
+
+			if (StudentPeer.doSelectAll().size() == 0) {
+				// Create Student
+				Student addison = new Student();
+				addison.setName("jonh");
+				addison.save();
+
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	// POST
@@ -51,7 +71,10 @@ public class Controller  extends HttpServlet {
 	// GET
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
-
+		
+		listStudents();
+		
+		request.setAttribute("listStudents", studentsList);
 
 		// On récupère la méthode d'envoi de la requête
 		String methode = request.getMethod().toLowerCase();
@@ -61,12 +84,13 @@ public class Controller  extends HttpServlet {
 		if (action == null) {
 			action = "/napp";
 			System.out.println("action == null");
-		}
-		System.out.println(action);
-		
-		// Exécution action
-		if (methode.equals("get") && action.equals("/napp")) {
-			doNapp(request, response);
+		} else if (action.equals("/connect")) {
+			try {
+				doConnect(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} else {
 			// Autres cas
 			doNapp(request, response);
@@ -75,8 +99,27 @@ public class Controller  extends HttpServlet {
 	
 	private void doNapp(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-
+		System.out.print(urlNapp.toString());
 		loadJSP(urlNapp, request, response);
+	}
+	
+	private void doConnect(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+
+		String username = request.getParameter("user");
+		String passwd = request.getParameter("passwd");
+		System.out.print("username : " + username);
+		System.out.print("passwd : " + passwd);
+		Boolean connectState =  UserPeer.doConnect(username, passwd);
+		System.out.print("doConnect");
+		System.out.print(connectState.toString());
+		if (connectState) {
+			loadJSP("/napp1/notes.jsp", request, response);
+		} else {
+			loadJSP("/napp1/accueil.jsp", request, response);
+		}
+		
+		
 	}
 	
 	public void loadJSP(String url, HttpServletRequest request,
@@ -85,5 +128,13 @@ public class Controller  extends HttpServlet {
 		ServletContext sc = getServletContext();
 		RequestDispatcher rd = sc.getRequestDispatcher(url);
 		rd.forward(request, response);
+	}
+	
+	private void listStudents() {
+		try {
+			studentsList = StudentPeer.doSelectAll();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

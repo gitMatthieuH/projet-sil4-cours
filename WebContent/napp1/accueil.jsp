@@ -6,6 +6,9 @@
 <%@ page import="fr.iut2.sil4.data.Student"%>
 <%@ page import="fr.iut2.sil4.data.StudentPeer"%>
 <%@ page import="org.apache.torque.criteria.Criteria"%>
+
+<jsp:useBean id="listStudents" type="java.util.List<fr.iut2.sil4.data.Student>" scope="request"/>
+
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -19,14 +22,14 @@
 		  </div>
 		  	<%-- Forumulaire de connexion --%>
 			<div class="col-md-2 col-md-offset-5">
-				<form role="form" method="get" action="note.jsp">
+				<form role="form" method="get" action="connect">
 				  <div class="form-group">
 				    <label for="user">Email address</label>
-				    <input type="text" class="form-control" id="user" name="user"  placeholder="Nom d'utilisateur">
+				    <input type="text" class="form-control" id="user" name="user"  placeholder="Nom d'utilisateur" required>
 				  </div>
 				  <div class="form-group">
 				    <label for="passwd">Password</label>
-				    <input type="password" class="form-control" id="passwd" name="user" name="passwd" placeholder="Mot de passe">
+				    <input type="password" class="form-control" id="passwd" name="passwd" placeholder="Mot de passe" required>
 				  </div>
 				  <div class="checkbox">
 				    <label>
@@ -35,14 +38,10 @@
 				  </div>
 				  <button type="submit" class="btn btn-default">Submit</button>
 				</form>
-				<%
-				
-				Student student1 = new Student();
-				student1.isNew();
-				//for (Student student : StudentPeer.doSelectAll()) {
-				
-				//}
-				%>
+				<% for (Student student : listStudents) { %>
+					<%=student.getName()%>
+				<% } %>
+
 			</div>
 		</div>
 	<jsp:include page="/napp1/include/footer.jsp"/>

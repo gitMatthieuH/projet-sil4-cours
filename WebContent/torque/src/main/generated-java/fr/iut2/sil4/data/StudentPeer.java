@@ -1,5 +1,9 @@
 package fr.iut2.sil4.data;
 
+import java.util.List;
+
+import org.apache.torque.criteria.Criteria;
+
 /**
  * Student Table
  *
@@ -15,5 +19,8 @@ package fr.iut2.sil4.data;
 public class StudentPeer
     extends fr.iut2.sil4.data.BaseStudentPeer
 {
-
+	public static List<Student> doSelectAll() throws Exception {
+		Criteria crit = new Criteria();
+		return doSelect(crit);
+	}
 }
