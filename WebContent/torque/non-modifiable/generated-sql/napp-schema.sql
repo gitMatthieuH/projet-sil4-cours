@@ -14,6 +14,8 @@ drop table if exists user;
 CREATE TABLE student
 (
     student_id INTEGER NOT NULL AUTO_INCREMENT,
+    absences INTEGER NOT NULL,
+    firstname VARCHAR(128) NOT NULL,
     name VARCHAR(128) NOT NULL,
     PRIMARY KEY(student_id)
 );

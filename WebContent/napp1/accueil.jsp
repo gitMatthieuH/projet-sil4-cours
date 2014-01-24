@@ -3,11 +3,7 @@
 <!DOCTYPE html>
 <%-- Directives de page import --%>
 <%@ page import="java.util.*"%>
-<%@ page import="fr.iut2.sil4.data.Student"%>
-<%@ page import="fr.iut2.sil4.data.StudentPeer"%>
 <%@ page import="org.apache.torque.criteria.Criteria"%>
-
-<jsp:useBean id="listStudents" type="java.util.List<fr.iut2.sil4.data.Student>" scope="request"/>
 
 <html>
 	<head>
@@ -38,10 +34,6 @@
 				  </div>
 				  <button type="submit" class="btn btn-default">Submit</button>
 				</form>
-				<% for (Student student : listStudents) { %>
-					<%=student.getName()%>
-				<% } %>
-
 			</div>
 		</div>
 	<jsp:include page="/napp1/include/footer.jsp"/>

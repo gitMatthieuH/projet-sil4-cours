@@ -51,7 +51,9 @@ public class Controller  extends HttpServlet {
 			if (StudentPeer.doSelectAll().size() == 0) {
 				// Create Student
 				Student addison = new Student();
-				addison.setName("jonh");
+				addison.setFirstname("matthieu");
+				addison.setName("Hostache");
+				addison.setAbsences(15);
 				addison.save();
 
 			}
@@ -91,29 +93,39 @@ public class Controller  extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		} else if (action.equals("/deconnect")) {
+			request.getSession().removeAttribute("token");
+			loadJSP("/napp1/accueil.jsp", request, response);
 		} else {
-			// Autres cas
-			doNapp(request, response);
+			System.out.println("token " + request.getSession().getAttribute("token"));
+			if (null == request.getSession().getAttribute("token")) {
+				System.out.println("not connected");
+				loadJSP("/napp1/accueil.jsp", request, response);
+			} else {
+				System.out.println("connected " + "/napp1"+action+".jsp");
+				loadJSP("/napp1"+action+".jsp", request, response);
+			}
 		}
 	}
 	
-	private void doNapp(HttpServletRequest request,
+	/*private void doNapp(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		System.out.print(urlNapp.toString());
+		System.out.println(urlNapp.toString());
 		loadJSP(urlNapp, request, response);
-	}
+	}*/
 	
 	private void doConnect(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 
 		String username = request.getParameter("user");
 		String passwd = request.getParameter("passwd");
-		System.out.print("username : " + username);
-		System.out.print("passwd : " + passwd);
+		/*System.out.print("username : " + username);
+		System.out.print("passwd : " + passwd);*/
 		Boolean connectState =  UserPeer.doConnect(username, passwd);
-		System.out.print("doConnect");
-		System.out.print(connectState.toString());
+		/*System.out.print("doConnect");
+		System.out.print(connectState.toString());*/
 		if (connectState) {
+			request.getSession().setAttribute("token", username);
 			loadJSP("/napp1/notes.jsp", request, response);
 		} else {
 			loadJSP("/napp1/accueil.jsp", request, response);
