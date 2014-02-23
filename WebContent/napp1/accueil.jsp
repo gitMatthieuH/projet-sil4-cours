@@ -14,7 +14,7 @@
 	<body>
 		<div class="row">
 		  <div class="col-md-12">
-			  <jsp:include page="/napp1/include/menu.jsp"/>
+			  <jsp:include page="/napp1/include/menu_accueil.jsp"/>
 		  </div>
 		  	<%-- Forumulaire de connexion --%>
 			<div class="col-md-2 col-md-offset-5">

@@ -23,6 +23,10 @@
 				    <input type="date" class="form-control datepicker" id="date" name="date" placeholder="Date d\'abscence" required>
 				  </div>
 				  <div class="form-group">
+				    <label for="motif">Motif</label>
+				    <input type="text" class="form-control" id="motif" name="motif" placeholder="Date d\'abscence" required>
+				  </div>
+				  <div class="form-group">
 				    <label for="studentId">Etudiant</label>
 				    <input type="text" class="form-control" id="studentId" name="studentId" placeholder="Id de l\'étudiant" required>
 				  </div>

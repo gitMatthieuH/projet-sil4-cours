@@ -32,7 +32,7 @@
 			   		<tr>
 			         	<td><%=note.getControleId()%></td>
 		         		<td><%=note.getPoints()%></td>
-			         	<th><%=note.getStudentId()%></th>
+			         	<th><%=note.getStudent().getFirstname()%> <%=note.getStudent().getName()%></th>
 			      	</tr>
 					
 				<% } %>

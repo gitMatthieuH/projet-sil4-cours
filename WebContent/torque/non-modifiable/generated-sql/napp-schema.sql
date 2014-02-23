@@ -85,6 +85,7 @@ CREATE TABLE abscence
 (
     abscence_id INTEGER NOT NULL AUTO_INCREMENT,
     date DATE NOT NULL,
+    motif VARCHAR(128) NOT NULL,
     student_id INTEGER NOT NULL,
     PRIMARY KEY(abscence_id)
 );

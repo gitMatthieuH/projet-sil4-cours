@@ -123,12 +123,18 @@
       required="true"
       primaryKey="true"
       type="INTEGER"
-      description="Abscence_id Id"/>
+      description="Abscence Id"/>
     <column
       name="date"
       required="true"
       type="DATE"
       description="Date"/>
+    <column
+      name="motif"
+      required="true"
+      type="VARCHAR"
+      size="128"
+      description="Abscence motif"/>
    <column
       name="student_id"
       required="true"

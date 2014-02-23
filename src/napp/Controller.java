@@ -79,32 +79,42 @@ public class Controller  extends HttpServlet {
 			System.out.println("action == null");
 		}
 		
-		String username = (String) request.getSession().getAttribute("token");
+		
 		User user = null;
 		
 		switch (action) 
 		{ 
-		case "/abscences": 
-			List<Abscence> list = null;
-			try {
-				list = UserPeer.getStudent(username).getStudent().getAbscences();
-			} catch (Exception e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
+		case "/abscences":
+			if (null != request.getSession().getAttribute("token")) {
+				String username = (String) request.getSession().getAttribute("token");
+				List<Abscence> list = null;
+				try {
+					list = UserPeer.getStudent(username).getStudent().getAbscences();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				request.setAttribute("listAbscences", list);
+				loadJSP("/napp1/abscences.jsp", request, response);
+			} else {
+				loadJSP("/napp1/accueil.jsp", request, response);
 			}
-			request.setAttribute("listAbscences", list);
-			loadJSP("/napp1/abscences.jsp", request, response);
 			break;
 		case "/notes": 
-			List<Note> myNotes = null;
-			try {
-				myNotes = UserPeer.getStudent(username).getStudent().getNotes();
-			} catch (Exception e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
+			if (null != request.getSession().getAttribute("token")) {
+				String username = (String) request.getSession().getAttribute("token");
+				List<Note> myNotes = null;
+				try {
+					myNotes = UserPeer.getStudent(username).getStudent().getNotes();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				request.setAttribute("myNotes", myNotes);
+				loadJSP("/napp1/notes.jsp", request, response);
+			} else {
+				loadJSP("/napp1/accueil.jsp", request, response);
 			}
-			request.setAttribute("myNotes", myNotes);
-			loadJSP("/napp1/notes.jsp", request, response);
 			break;
 		case "/connect": 
 			try {
@@ -142,6 +152,14 @@ public class Controller  extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
+		case "/add_abscence": 
+			try {
+				addAbscence(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
 		case "/student_list_admin": 
 			request.setAttribute("listStudents", listStudents());
 			loadJSP("/napp1"+action+".jsp", request, response);
@@ -172,7 +190,6 @@ public class Controller  extends HttpServlet {
 				System.out.println("not connected");
 				loadJSP("/napp1/accueil.jsp", request, response);
 			} else {
-				System.out.println("connected " + "/napp1"+action+".jsp");
 				loadJSP("/napp1"+action+".jsp", request, response);
 			}
 		}
@@ -273,6 +290,7 @@ public class Controller  extends HttpServlet {
 		System.out.println("studentId " + request.getParameter("studentId"));
 		int absc_studentId = Integer.parseInt(request.getParameter("studentId"));
 		new_absc.setStudentId(absc_studentId);
+		new_absc.setMotif(request.getParameter("motif"));
 		new_absc.save();
 		
 		request.setAttribute("listAbscences", listAbscences());

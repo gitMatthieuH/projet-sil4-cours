@@ -9,7 +9,6 @@
 		<jsp:include page="/napp1/include/libraries.jsp"/>
 		<%@ page import="fr.iut2.sil4.data.Note"%>
 		<%@ page import="fr.iut2.sil4.data.NotePeer"%>
-		<%@ page import="java.util.Date" %>
 		<jsp:useBean id="myNotes" type="java.util.List<fr.iut2.sil4.data.Note>" scope="request"/>
 	</head>
 	<body>

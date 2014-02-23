@@ -20,26 +20,28 @@
 			<div class="col-md-6 col-md-offset-3">
 		  <%-- Liste des utilisateurs --%>
 			<table class="table">
-				<caption>Abscences</caption>
+				<caption>Absences</caption>
 			   <thead>
 			      <tr>
+			      	 <th>Etudiant</th>
 			         <th>Date</th>
-			         <th>Etudiant</th>
+			         <th>Motif</th>
 			      </tr>
 			   </thead>
 			   <tbody>
 			   
 			   	<% for (Abscence absc : listAbscences) { %>
 			   		<tr>
+			   			<td><%=absc.getStudent().getFirstname()%> <%=absc.getStudent().getName()%></td>
 			   			<td><%=absc.getDate()%></td>
-		         		<td><%=absc.getStudentId()%></td>
+			   			<td><%=absc.getMotif()%></td>		
 			      	</tr>
 					
 				<% } %>
 			      
 			   </tbody>
 			</table>
-			<a href="abscence_add_admin">Ajouter une abscence</a>
+			<a href="abscence_add_admin">Ajouter une absence</a>
 			</div>
 		</div>
 	<jsp:include page="/napp1/include/footer.jsp"/>
