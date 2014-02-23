@@ -274,7 +274,7 @@ public abstract class BaseAbscencePeer
      * @throws TorqueException Any exceptions caught during processing will be
      *         rethrown wrapped into a TorqueException.
      */
-    public static List<Abscence> doSelect(Criteria criteria)
+    public static List<Abscence> abscences(Criteria criteria)
             throws TorqueException
     {
         return getAbscencePeerImpl().doSelect(criteria);
@@ -292,13 +292,12 @@ public abstract class BaseAbscencePeer
      * @throws TorqueException Any exceptions caught during processing will be
      *         rethrown wrapped into a TorqueException.
      */
-    public static List<Abscence> doSelect(
-                Criteria criteria,
-                Connection connection)
+    public static List<Abscence> doSelect(Criteria criteria)
             throws TorqueException
     {
-        return getAbscencePeerImpl().doSelect(criteria, connection);
+        return getAbscencePeerImpl().doSelect(criteria);
     }
+    
 
     /**
      * Selects rows from a database an maps them to objects.

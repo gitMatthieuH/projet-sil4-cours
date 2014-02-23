@@ -34,7 +34,7 @@
 				    <input type="text" class="form-control" id="groupid" name="groupid" placeholder="Nom du groupe" required>
 				  </div>
 				  <div class="form-group">
-				    <label for="passwd">Groupe</label>
+				    <label for="passwd">Mot de passe</label>
 				    <input type="password" class="form-control" id="passwd" name="passwd" placeholder="Mot de passe" required>
 				  </div>
 				  <button type="submit" class="btn btn-default">Ajouter</button>

@@ -15,7 +15,7 @@
 	<body>
 		<div class="row">
 		  <div class="col-md-12">
-			  <jsp:include page="/napp1/include/menu_admin.jsp"/>
+			  <jsp:include page="/napp1/include/menu.jsp"/>
 		  </div>
 			<div class="col-md-6 col-md-offset-3">
 		  <%-- Liste des utilisateurs --%>
@@ -24,7 +24,6 @@
 			   <thead>
 			      <tr>
 			         <th>Date</th>
-			         <th>Etudiant</th>
 			      </tr>
 			   </thead>
 			   <tbody>
@@ -32,7 +31,6 @@
 			   	<% for (Abscence absc : listAbscences) { %>
 			   		<tr>
 			   			<td><%=absc.getDate()%></td>
-		         		<td><%=absc.getStudentId()%></td>
 			      	</tr>
 					
 				<% } %>

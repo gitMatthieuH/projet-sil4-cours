@@ -4,7 +4,6 @@
  			<li><a class="navbar-brand" href="index">Napp</a></li>
 			<li><a href="notes">Notes</a></li>
 			<li><a href="abscences">Abscences</a></li>
-			<li><a href="group">Groupes</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li><a href="deconnect">Deconnexion</a></li>

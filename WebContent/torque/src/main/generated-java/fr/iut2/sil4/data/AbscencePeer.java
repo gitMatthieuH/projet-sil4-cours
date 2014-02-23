@@ -1,5 +1,9 @@
 package fr.iut2.sil4.data;
 
+import java.util.List;
+
+import org.apache.torque.criteria.Criteria;
+
 /**
  * Note Table
  *
@@ -15,5 +19,20 @@ package fr.iut2.sil4.data;
 public class AbscencePeer
     extends fr.iut2.sil4.data.BaseAbscencePeer
 {
+	public static List<Abscence> doSelectAll() throws Exception {
+		Criteria crit = new Criteria();
+		return doSelect(crit);
+	}
+	
+	
+	
+	public static List<Abscence> getAbscences(int studentId) throws Exception {
+		
+		Criteria crit = new Criteria();	
+		crit.and(STUDENT_ID,studentId,Criteria.EQUAL);
+		List<Abscence> abscences = doSelect(crit);
+		
+		return abscences;
+	}
 
 }

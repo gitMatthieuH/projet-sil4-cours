@@ -7,15 +7,15 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title><%= getServletContext().getInitParameter("title")%></title>
 		<jsp:include page="/napp1/include/libraries.jsp"/>
-		<%@ page import="fr.iut2.sil4.data.Abscence"%>
-		<%@ page import="fr.iut2.sil4.data.AbscencePeer"%>
+		<%@ page import="fr.iut2.sil4.data.Note"%>
+		<%@ page import="fr.iut2.sil4.data.NotePeer"%>
 		<%@ page import="java.util.Date" %>
-		<jsp:useBean id="listAbscences" type="java.util.List<fr.iut2.sil4.data.Abscence>" scope="request"/>
+		<jsp:useBean id="myNotes" type="java.util.List<fr.iut2.sil4.data.Note>" scope="request"/>
 	</head>
 	<body>
 		<div class="row">
 		  <div class="col-md-12">
-			  <jsp:include page="/napp1/include/menu_admin.jsp"/>
+			  <jsp:include page="/napp1/include/menu.jsp"/>
 		  </div>
 			<div class="col-md-6 col-md-offset-3">
 		  <%-- Liste des utilisateurs --%>
@@ -23,16 +23,18 @@
 				<caption>Abscences</caption>
 			   <thead>
 			      <tr>
-			         <th>Date</th>
+			         <th>Contrôle</th>
+			         <th>Points</th>
 			         <th>Etudiant</th>
 			      </tr>
 			   </thead>
 			   <tbody>
 			   
-			   	<% for (Abscence absc : listAbscences) { %>
+			   	<% for (Note note : myNotes) { %>
 			   		<tr>
-			   			<td><%=absc.getDate()%></td>
-		         		<td><%=absc.getStudentId()%></td>
+			   			<td><%=note.getControleId()%></td>
+			   			<td><%=note.getPoints()%></td>
+			   			<td><%=note.getStudentId()%></td>
 			      	</tr>
 					
 				<% } %>

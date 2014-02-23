@@ -2,6 +2,8 @@ package napp;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -24,6 +26,8 @@ import fr.iut2.sil4.data.Usergroup;
 import fr.iut2.sil4.data.UsergroupPeer;
 import fr.iut2.sil4.data.Note;
 import fr.iut2.sil4.data.NotePeer;
+import fr.iut2.sil4.data.Abscence;
+import fr.iut2.sil4.data.AbscencePeer;
 
 
 @SuppressWarnings("serial")
@@ -75,10 +79,33 @@ public class Controller  extends HttpServlet {
 			System.out.println("action == null");
 		}
 		
-		
+		String username = (String) request.getSession().getAttribute("token");
+		User user = null;
 		
 		switch (action) 
 		{ 
+		case "/abscences": 
+			List<Abscence> list = null;
+			try {
+				list = UserPeer.getStudent(username).getStudent().getAbscences();
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			request.setAttribute("listAbscences", list);
+			loadJSP("/napp1/abscences.jsp", request, response);
+			break;
+		case "/notes": 
+			List<Note> myNotes = null;
+			try {
+				myNotes = UserPeer.getStudent(username).getStudent().getNotes();
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			request.setAttribute("myNotes", myNotes);
+			loadJSP("/napp1/notes.jsp", request, response);
+			break;
 		case "/connect": 
 			try {
 				doConnect(request, response);
@@ -126,7 +153,19 @@ public class Controller  extends HttpServlet {
 		case "/notes_list_admin": 
 			request.setAttribute("listNotes", listNotes());
 			loadJSP("/napp1"+action+".jsp", request, response);
-			break; 
+			break;
+		case "/abscences_list_admin": 
+			request.setAttribute("listAbscences", listAbscences());
+			loadJSP("/napp1"+action+".jsp", request, response);
+			break;
+		case "/student_admin": 
+			try {
+				addStudent(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
 		default: 
 			System.out.println("token " + request.getSession().getAttribute("token"));
 			if (null == request.getSession().getAttribute("token")) {
@@ -190,7 +229,7 @@ public class Controller  extends HttpServlet {
 		new_user.setStudentId(new_student.getStudentId());
 		new_user.save();
 		
-		
+		request.setAttribute("listStudents", listStudents());
 		loadJSP("/napp1/student_list_admin.jsp", request, response);
 	}
 	
@@ -203,6 +242,7 @@ public class Controller  extends HttpServlet {
 		new_group.setGroupName(group_name);
 		new_group.save();
 		
+		request.setAttribute("listGroups", listGroups());
 		loadJSP("/napp1/group_list_admin.jsp", request, response);
 	}
 	
@@ -218,7 +258,25 @@ public class Controller  extends HttpServlet {
 		new_note.setStudentId(note_studentId);
 		new_note.save();
 		
+		request.setAttribute("listNotes", listNotes());
 		loadJSP("/napp1/notes_list_admin.jsp", request, response);
+	}
+	
+	private void addAbscence(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		
+		Abscence new_absc = new Abscence();
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		Date absc_date = sdf.parse(request.getParameter("date"));
+		new_absc.setDate(absc_date);
+		System.out.println("absc_date " + absc_date);
+		System.out.println("studentId " + request.getParameter("studentId"));
+		int absc_studentId = Integer.parseInt(request.getParameter("studentId"));
+		new_absc.setStudentId(absc_studentId);
+		new_absc.save();
+		
+		request.setAttribute("listAbscences", listAbscences());
+		loadJSP("/napp1/abscences_list_admin.jsp", request, response);
 	}
 	
 	public void loadJSP(String url, HttpServletRequest request,
@@ -258,6 +316,17 @@ public class Controller  extends HttpServlet {
 			e.printStackTrace();
 		}
 		System.out.println("notes list " + list);
+		return list;
+	}
+	
+	private List<Abscence> listAbscences() {
+		List<Abscence> list = null;
+		try {
+			list = AbscencePeer.doSelectAll();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("abscences list " + list);
 		return list;
 	}
 }

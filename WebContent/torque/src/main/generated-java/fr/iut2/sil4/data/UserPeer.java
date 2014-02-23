@@ -37,6 +37,16 @@ public class UserPeer
 		return user.getIsadmin();
 	}
 	
+	public static User getStudent(String username) throws Exception {
+		
+		Criteria crit = new Criteria();	
+		crit.and(USER_NAME,username,Criteria.EQUAL);
+		User user = doSelect(crit).get(0);
+		
+		return user;
+	}
+	
+	
 	public static List<User> doSelectAll() throws Exception {
 		Criteria crit = new Criteria();
 		return doSelect(crit);
