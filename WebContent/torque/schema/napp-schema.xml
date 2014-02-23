@@ -88,4 +88,57 @@
       description="Group Name"/>
   </table>
   
+  <table name="note" description="Note Table">
+   <column
+      name="note_id"
+      required="true"
+      primaryKey="true"
+      type="INTEGER"
+      description="Group Id"/>
+    <column
+      name="controle_id"
+      required="true"
+      type="INTEGER"
+      description="Controle Id"/>
+   <column
+      name="points"
+      required="true"
+      type="INTEGER"
+      description="Points"/>
+   <column
+      name="student_id"
+      required="true"
+      type="INTEGER"
+      description="Foreign Key Author"/>
+    <foreign-key foreignTable="student">
+      <reference
+        local="student_id"
+        foreign="student_id"/>
+    </foreign-key>
+  </table>
+  
+  <table name="abscence" description="Note Table">
+   <column
+      name="abscence_id"
+      required="true"
+      primaryKey="true"
+      type="INTEGER"
+      description="Abscence_id Id"/>
+    <column
+      name="date"
+      required="true"
+      type="DATE"
+      description="Date"/>
+   <column
+      name="student_id"
+      required="true"
+      type="INTEGER"
+      description="Foreign Key Author"/>
+    <foreign-key foreignTable="student">
+      <reference
+        local="student_id"
+        foreign="student_id"/>
+    </foreign-key>
+  </table>
+  
 </database>

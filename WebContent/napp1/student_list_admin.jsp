@@ -1,6 +1,3 @@
-
-
-
 <%-- Directive de page : permet de définir les attributs de la page --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %> 
 <!DOCTYPE html>
@@ -17,7 +14,7 @@
 	<body>
 		<div class="row">
 		  <div class="col-md-12">
-			  <jsp:include page="/napp1/include/menu.jsp"/>
+			  <jsp:include page="/napp1/include/menu_admin.jsp"/>
 		  </div>
 			<div class="col-md-6 col-md-offset-3">
 		  <%-- Liste des utilisateurs --%>
@@ -32,11 +29,12 @@
 			      </tr>
 			   </thead>
 			   <tbody>
+			   
 			   	<% for (Student student : listStudents) { %>
 			   		<tr>
 			         	<td><%=student.getFirstname()%></td>
 		         		<td><%=student.getName()%></td>
-			         	<td>yobitch</td>
+			         	<td><%=student.getGroupId()%></td>
 			         	<th><%=student.getAbsences()%></th>
 			      	</tr>
 					
@@ -44,6 +42,7 @@
 			      
 			   </tbody>
 			</table>
+			<a href="student_add_admin">Ajouter un étudiant</a>
 			</div>
 		</div>
 	<jsp:include page="/napp1/include/footer.jsp"/>

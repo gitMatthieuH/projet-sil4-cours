@@ -14,7 +14,7 @@
 	<body>
 		<div class="row">
 		  <div class="col-md-12">
-			  <jsp:include page="/napp1/include/menu.jsp"/>
+			  <jsp:include page="/napp1/include/menu_admin.jsp"/>
 		  </div>
 			<div class="col-md-2 col-md-offset-5">
 				<form role="form" method="get" action="add_group">

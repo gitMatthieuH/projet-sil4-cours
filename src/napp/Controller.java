@@ -1,6 +1,7 @@
 package napp;
 
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -20,6 +21,9 @@ import fr.iut2.sil4.data.StudentPeer;
 import fr.iut2.sil4.data.User;
 import fr.iut2.sil4.data.UserPeer;
 import fr.iut2.sil4.data.Usergroup;
+import fr.iut2.sil4.data.UsergroupPeer;
+import fr.iut2.sil4.data.Note;
+import fr.iut2.sil4.data.NotePeer;
 
 
 @SuppressWarnings("serial")
@@ -27,7 +31,6 @@ public class Controller  extends HttpServlet {
 	
 	private String urlNapp;
 	private static final String TORQUE_PROPS = new String("/torque.properties");
-	private List<Student> studentsList;
 	
 	public void init() throws ServletException {
 		super.init();
@@ -47,29 +50,6 @@ public class Controller  extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		
-		try {
-
-			/*if (StudentPeer.doSelectAll().size() == 0) {
-				// Create Student
-				Usergroup miam = new Usergroup();
-				miam.setGroupName("miam");
-				miam.save();
-				
-				
-				Student addison = new Student();
-				addison.setFirstname("matthieu");
-				addison.setName("Hostache");
-				addison.setAbsences(15);
-				addison.setGroupId(miam.getGroupId());
-				addison.
-				addison.save();
-
-			}*/
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 	
 	// POST
@@ -83,11 +63,6 @@ public class Controller  extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
 		
-		listStudents();
-		request.setAttribute("listStudents", studentsList);
-		
-		
-
 		
 		// On récupère la méthode d'envoi de la requête
 		String methode = request.getMethod().toLowerCase();
@@ -99,6 +74,8 @@ public class Controller  extends HttpServlet {
 			action = "/napp";
 			System.out.println("action == null");
 		}
+		
+		
 		
 		switch (action) 
 		{ 
@@ -129,6 +106,26 @@ public class Controller  extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			break;
+		case "/add_note": 
+			try {
+				addNote(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+		case "/student_list_admin": 
+			request.setAttribute("listStudents", listStudents());
+			loadJSP("/napp1"+action+".jsp", request, response);
+			break;
+		case "/group_list_admin": 
+			request.setAttribute("listGroups", listGroups());
+			loadJSP("/napp1"+action+".jsp", request, response);
+			break;
+		case "/notes_list_admin": 
+			request.setAttribute("listNotes", listNotes());
+			loadJSP("/napp1"+action+".jsp", request, response);
 			break; 
 		default: 
 			System.out.println("token " + request.getSession().getAttribute("token"));
@@ -141,12 +138,6 @@ public class Controller  extends HttpServlet {
 			}
 		}
 	}
-	
-	/*private void doNapp(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-		System.out.println(urlNapp.toString());
-		loadJSP(urlNapp, request, response);
-	}*/
 	
 	private void doConnect(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
@@ -200,7 +191,7 @@ public class Controller  extends HttpServlet {
 		new_user.save();
 		
 		
-		loadJSP("/napp1/index_admin.jsp", request, response);
+		loadJSP("/napp1/student_list_admin.jsp", request, response);
 	}
 	
 	private void addGroup(HttpServletRequest request,
@@ -212,7 +203,22 @@ public class Controller  extends HttpServlet {
 		new_group.setGroupName(group_name);
 		new_group.save();
 		
-		loadJSP("/napp1/index_admin.jsp", request, response);
+		loadJSP("/napp1/group_list_admin.jsp", request, response);
+	}
+	
+	private void addNote(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		
+		Note new_note = new Note();
+		int note_controleId = Integer.parseInt(request.getParameter("controleId"));
+		new_note.setControleId(note_controleId);
+		int note_points = Integer.parseInt(request.getParameter("points"));
+		new_note.setPoints(note_points);
+		int note_studentId = Integer.parseInt(request.getParameter("studentId"));
+		new_note.setStudentId(note_studentId);
+		new_note.save();
+		
+		loadJSP("/napp1/notes_list_admin.jsp", request, response);
 	}
 	
 	public void loadJSP(String url, HttpServletRequest request,
@@ -223,11 +229,35 @@ public class Controller  extends HttpServlet {
 		rd.forward(request, response);
 	}
 	
-	private void listStudents() {
+	private List<Student> listStudents() {
+		List<Student> list = null;
 		try {
-			studentsList = StudentPeer.doSelectAll();
+			list = StudentPeer.doSelectAll();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return list;
+	}
+	
+	private List<Usergroup> listGroups() {
+		List<Usergroup> list = null;
+		try {
+			list = UsergroupPeer.doSelectAll();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("group list " + list);
+		return list;
+	}
+	
+	private List<Note> listNotes() {
+		List<Note> list = null;
+		try {
+			list = NotePeer.doSelectAll();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("notes list " + list);
+		return list;
 	}
 }

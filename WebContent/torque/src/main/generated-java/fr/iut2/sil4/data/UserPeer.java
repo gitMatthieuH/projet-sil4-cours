@@ -36,4 +36,9 @@ public class UserPeer
 		
 		return user.getIsadmin();
 	}
+	
+	public static List<User> doSelectAll() throws Exception {
+		Criteria crit = new Criteria();
+		return doSelect(crit);
+	}
 }
