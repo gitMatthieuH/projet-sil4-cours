@@ -27,4 +27,13 @@ public class UserPeer
 		
 		return user.getPassword().equals(passwd);
 	}
+	
+	public static Boolean isAdminisitrator(String username) throws Exception {
+		
+		Criteria crit = new Criteria();	
+		crit.and(USER_NAME,username,Criteria.EQUAL);
+		User user = doSelect(crit).get(0);
+		
+		return user.getIsadmin();
+	}
 }

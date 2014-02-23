@@ -3,8 +3,17 @@
 -- -----------------------------------------------------------------------
 
 
+ALTER TABLE student
+    DROP FOREIGN KEY student_FK_1;
+
+
+ALTER TABLE user
+    DROP FOREIGN KEY user_FK_1;
+
+
 drop table if exists student;
 drop table if exists user;
+drop table if exists usergroup;
 
 
 
@@ -17,6 +26,7 @@ CREATE TABLE student
     absences INTEGER NOT NULL,
     firstname VARCHAR(128) NOT NULL,
     name VARCHAR(128) NOT NULL,
+    group_id INTEGER NOT NULL,
     PRIMARY KEY(student_id)
 );
 
@@ -28,9 +38,32 @@ CREATE TABLE user
 (
     user_name VARCHAR(128) NOT NULL,
     password VARCHAR(128) NOT NULL,
+    isAdmin INTEGER NOT NULL,
+    student_id INTEGER,
     PRIMARY KEY(user_name)
 );
 
+
+# -----------------------------------------------------------------------
+# usergroup
+# -----------------------------------------------------------------------
+CREATE TABLE usergroup
+(
+    group_id INTEGER NOT NULL AUTO_INCREMENT,
+    group_name VARCHAR(128) NOT NULL,
+    PRIMARY KEY(group_id)
+);
+
+
+ALTER TABLE student
+    ADD CONSTRAINT student_FK_1
+    FOREIGN KEY (group_id)
+    REFERENCES usergroup (group_id);
+
+ALTER TABLE user
+    ADD CONSTRAINT user_FK_1
+    FOREIGN KEY (student_id)
+    REFERENCES student (student_id);
 
 
 

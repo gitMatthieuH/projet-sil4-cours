@@ -23,4 +23,5 @@ public class StudentPeer
 		Criteria crit = new Criteria();
 		return doSelect(crit);
 	}
+	
 }

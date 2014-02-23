@@ -16,18 +16,28 @@
 		  <div class="col-md-12">
 			  <jsp:include page="/napp1/include/menu.jsp"/>
 		  </div>
-		  	<%-- Forumulaire de connexion --%>
 			<div class="col-md-2 col-md-offset-5">
-				<form role="form" method="get" action="connect">
-				  <div class="form-group">
-				    <label for="user">Email address</label>
-				    <input type="text" class="form-control" id="user" name="user"  placeholder="Nom d'utilisateur" required>
+				<form role="form" method="get" action="add_student">
+				  <div class="form-group">Prénom</label>
+				    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Nom" required>
 				  </div>
 				  <div class="form-group">
-				    <label for="passwd">Password</label>
+				    <label for="name">Nom</label>
+				    <input type="text" class="form-control" id="name" name="name" placeholder="Prénom" required>
+				  </div>
+				  <div class="form-group">
+				    <label for="username">Pseudonyme</label>
+				    <input type="text" class="form-control" id="username" name="username" placeholder="Pseudo" required>
+				  </div>
+				  <div class="form-group">
+				    <label for="groupid">Groupe</label>
+				    <input type="text" class="form-control" id="groupid" name="groupid" placeholder="Nom du groupe" required>
+				  </div>
+				  <div class="form-group">
+				    <label for="passwd">Groupe</label>
 				    <input type="password" class="form-control" id="passwd" name="passwd" placeholder="Mot de passe" required>
 				  </div>
-				  <button type="submit" class="btn btn-default">Submit</button>
+				  <button type="submit" class="btn btn-default">Ajouter</button>
 				</form>
 			</div>
 		</div>

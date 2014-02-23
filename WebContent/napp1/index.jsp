@@ -16,19 +16,8 @@
 		  <div class="col-md-12">
 			  <jsp:include page="/napp1/include/menu.jsp"/>
 		  </div>
-		  	<%-- Forumulaire de connexion --%>
 			<div class="col-md-2 col-md-offset-5">
-				<form role="form" method="get" action="connect">
-				  <div class="form-group">
-				    <label for="user">Email address</label>
-				    <input type="text" class="form-control" id="user" name="user"  placeholder="Nom d'utilisateur" required>
-				  </div>
-				  <div class="form-group">
-				    <label for="passwd">Password</label>
-				    <input type="password" class="form-control" id="passwd" name="passwd" placeholder="Mot de passe" required>
-				  </div>
-				  <button type="submit" class="btn btn-default">Submit</button>
-				</form>
+				Bienvenue sur l'espace consultation
 			</div>
 		</div>
 	<jsp:include page="/napp1/include/footer.jsp"/>

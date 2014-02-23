@@ -30,6 +30,16 @@
       type="VARCHAR"
       size="128"
       description="Student Name"/>
+    <column
+      name="group_id"
+      required="true"
+      type="INTEGER"
+      description="Foreign Key Author"/>
+    <foreign-key foreignTable="usergroup">
+      <reference
+        local="group_id"
+        foreign="group_id"/>
+    </foreign-key>
   </table>
 
   <table name="user" description="User Table" idMethod="idbroker">
@@ -46,5 +56,36 @@
       type="VARCHAR"
       size="128"
       description="User Password"/>
+    <column
+      name="isAdmin"
+      required="true"
+      type="BOOLEANINT"
+      description="User right"/>
+    <column
+      name="student_id"
+      required="false"
+      type="INTEGER"
+      description="Foreign Key Author"/>
+    <foreign-key foreignTable="student">
+      <reference
+        local="student_id"
+        foreign="student_id"/>
+    </foreign-key>
   </table>
+  
+  <table name="usergroup" description="Group Table">
+   <column
+      name="group_id"
+      required="true"
+      primaryKey="true"
+      type="INTEGER"
+      description="Group Id"/>
+   <column
+      name="group_name"
+      required="true"
+      type="VARCHAR"
+      size="128"
+      description="Group Name"/>
+  </table>
+  
 </database>
