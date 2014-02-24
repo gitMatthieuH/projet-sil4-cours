@@ -1,9 +1,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %> 
-<nav class="navbar navbar-default navbar-static-top" role="navigation">
- 		<ul class="nav navbar-nav navbar-left">
- 			<li><a class="navbar-brand" href="do/accueil">Napp</a></li>
-		</ul>
-		<ul class="nav navbar-nav navbar-right">
-			<li><a href="deconnect">Deconnexion</a></li>
-		</ul>
-</nav>
+<div class="container-hero" id="container_hero">
+	<div class="container">
+		<div class="hero">
+			<div class="clearfix">	
+				</div>
+			</div>
+			<div class="hero-lead">
+				<h2>Napp</h2></a>
+				<p class="lead">
+					Note & Absences application
+				</p>
+			</div>
+		</div>
+	</div>
+</div>

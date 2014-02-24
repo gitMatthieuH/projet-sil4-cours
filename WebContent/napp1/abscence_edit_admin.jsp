@@ -14,20 +14,23 @@
 	<body>
 		<div class="row">
 		  <div class="col-md-12">
-			  <jsp:include page="/napp1/include/menu_accueil.jsp"/>
+			  <jsp:include page="/napp1/include/menu_admin.jsp"/>
 		  </div>
-		  	<%-- Forumulaire de connexion --%>
 			<div class="col-md-2 col-md-offset-5">
-				<form role="form" method="get" action="connect">
+				<form role="form" method="get" action="edit_abscence">
 				  <div class="form-group">
-				    <label for="user">Nom d'utilisateur</label>
-				    <input type="text" class="form-control" id="user" name="user"  placeholder="Nom d'utilisateur" required>
+				    <label for="date">Date</label>
+				    <input type="date" class="form-control datepicker" id="date" name="date" placeholder="Date d'abscence" required>
 				  </div>
 				  <div class="form-group">
-				    <label for="passwd">Mot de passe</label>
-				    <input type="password" class="form-control" id="passwd" name="passwd" placeholder="Mot de passe" required>
+				    <label for="motif">Motif</label>
+				    <input type="text" class="form-control" id="motif" name="motif" placeholder="Date d'abscence" required>
 				  </div>
-				  <button type="submit" class="btn btn-default">Se connecter</button>
+				  <div class="form-group">
+				    <label for="studentId">Etudiant</label>
+				    <input type="text" class="form-control" id="studentId" name="studentId" placeholder="Id de l'étudiant" required>
+				  </div>
+				  <button type="submit" class="btn btn-default">Ajouter</button>
 				</form>
 			</div>
 		</div>

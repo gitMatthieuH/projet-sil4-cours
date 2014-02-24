@@ -606,3 +606,155 @@
 2014-02-23 20:39:18,794 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.sql.ddl
 2014-02-23 20:39:18,795 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
 2014-02-23 20:39:18,811 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-sql/napp-schema.sql
+2014-02-23 23:29:27,145 [main] INFO  org.apache.torque.generator.control.Controller - readConfiguration() : Starting to read configuration files
+2014-02-23 23:29:27,742 [main] INFO  org.apache.torque.generator.control.Controller - readConfiguration() : Configuration read.
+2014-02-23 23:29:27,745 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.dbObject
+2014-02-23 23:29:27,750 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:27,831 [main] INFO  org.apache.torque.generator.control.Controller - Skipping generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/Student.java because of existingTargetStrategy skip
+2014-02-23 23:29:27,832 [main] INFO  org.apache.torque.generator.control.Controller - Skipping generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/User.java because of existingTargetStrategy skip
+2014-02-23 23:29:27,832 [main] INFO  org.apache.torque.generator.control.Controller - Skipping generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/Usergroup.java because of existingTargetStrategy skip
+2014-02-23 23:29:27,832 [main] INFO  org.apache.torque.generator.control.Controller - Skipping generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/Note.java because of existingTargetStrategy skip
+2014-02-23 23:29:27,832 [main] INFO  org.apache.torque.generator.control.Controller - Skipping generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/Abscence.java because of existingTargetStrategy skip
+2014-02-23 23:29:27,833 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.dbObjectForView
+2014-02-23 23:29:27,833 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:27,870 [main] INFO  org.apache.torque.generator.control.Controller - No start Elements found for path database/all-views/view
+2014-02-23 23:29:27,871 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.baseDbObject
+2014-02-23 23:29:27,871 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:27,909 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/BaseStudent.java
+2014-02-23 23:29:28,496 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/BaseUser.java
+2014-02-23 23:29:28,582 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/BaseUsergroup.java
+2014-02-23 23:29:28,646 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/BaseNote.java
+2014-02-23 23:29:28,728 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/BaseAbscence.java
+2014-02-23 23:29:28,794 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.baseDbObjectForView
+2014-02-23 23:29:28,795 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:28,825 [main] INFO  org.apache.torque.generator.control.Controller - No start Elements found for path database/all-views/view
+2014-02-23 23:29:28,825 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.inheritanceDbObject
+2014-02-23 23:29:28,826 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:28,857 [main] INFO  org.apache.torque.generator.control.Controller - No start Elements found for path database/all-tables/table/column/inheritance
+2014-02-23 23:29:28,857 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.inheritanceDbObjectForView
+2014-02-23 23:29:28,857 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:28,887 [main] INFO  org.apache.torque.generator.control.Controller - No start Elements found for path database/all-views/view/column/inheritance
+2014-02-23 23:29:28,888 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.interface
+2014-02-23 23:29:28,888 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:28,919 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/.java
+2014-02-23 23:29:28,919 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/.java
+2014-02-23 23:29:28,919 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/.java
+2014-02-23 23:29:28,920 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/.java
+2014-02-23 23:29:28,920 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/.java
+2014-02-23 23:29:28,920 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.peer
+2014-02-23 23:29:28,920 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:28,950 [main] INFO  org.apache.torque.generator.control.Controller - Skipping generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/StudentPeer.java because of existingTargetStrategy skip
+2014-02-23 23:29:28,950 [main] INFO  org.apache.torque.generator.control.Controller - Skipping generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/UserPeer.java because of existingTargetStrategy skip
+2014-02-23 23:29:28,950 [main] INFO  org.apache.torque.generator.control.Controller - Skipping generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/UsergroupPeer.java because of existingTargetStrategy skip
+2014-02-23 23:29:28,951 [main] INFO  org.apache.torque.generator.control.Controller - Skipping generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/NotePeer.java because of existingTargetStrategy skip
+2014-02-23 23:29:28,951 [main] INFO  org.apache.torque.generator.control.Controller - Skipping generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/AbscencePeer.java because of existingTargetStrategy skip
+2014-02-23 23:29:28,951 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.peerForView
+2014-02-23 23:29:28,951 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:28,982 [main] INFO  org.apache.torque.generator.control.Controller - No start Elements found for path database/all-views/view
+2014-02-23 23:29:28,982 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.peer.impl
+2014-02-23 23:29:28,982 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:29,013 [main] INFO  org.apache.torque.generator.control.Controller - Skipping generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/StudentPeerImpl.java because of existingTargetStrategy skip
+2014-02-23 23:29:29,013 [main] INFO  org.apache.torque.generator.control.Controller - Skipping generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/UserPeerImpl.java because of existingTargetStrategy skip
+2014-02-23 23:29:29,013 [main] INFO  org.apache.torque.generator.control.Controller - Skipping generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/UsergroupPeerImpl.java because of existingTargetStrategy skip
+2014-02-23 23:29:29,013 [main] INFO  org.apache.torque.generator.control.Controller - Skipping generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/NotePeerImpl.java because of existingTargetStrategy skip
+2014-02-23 23:29:29,013 [main] INFO  org.apache.torque.generator.control.Controller - Skipping generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/AbscencePeerImpl.java because of existingTargetStrategy skip
+2014-02-23 23:29:29,013 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.peerForView.impl
+2014-02-23 23:29:29,014 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:29,043 [main] INFO  org.apache.torque.generator.control.Controller - No start Elements found for path database/all-views/view
+2014-02-23 23:29:29,043 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.basePeer
+2014-02-23 23:29:29,043 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:29,065 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/BaseStudentPeer.java
+2014-02-23 23:29:29,128 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/BaseUserPeer.java
+2014-02-23 23:29:29,162 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/BaseUsergroupPeer.java
+2014-02-23 23:29:29,198 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/BaseNotePeer.java
+2014-02-23 23:29:29,229 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/BaseAbscencePeer.java
+2014-02-23 23:29:29,258 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.basePeerForView
+2014-02-23 23:29:29,259 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:29,276 [main] INFO  org.apache.torque.generator.control.Controller - No start Elements found for path database/all-views/view
+2014-02-23 23:29:29,276 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.basePeer.impl
+2014-02-23 23:29:29,277 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:29,294 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/BaseStudentPeerImpl.java
+2014-02-23 23:29:29,343 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/BaseUserPeerImpl.java
+2014-02-23 23:29:29,365 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/BaseUsergroupPeerImpl.java
+2014-02-23 23:29:29,383 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/BaseNotePeerImpl.java
+2014-02-23 23:29:29,404 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/BaseAbscencePeerImpl.java
+2014-02-23 23:29:29,430 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.basePeerForView.impl
+2014-02-23 23:29:29,431 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:29,448 [main] INFO  org.apache.torque.generator.control.Controller - No start Elements found for path database/all-views/view
+2014-02-23 23:29:29,449 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.recordMapper
+2014-02-23 23:29:29,449 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:29,466 [main] INFO  org.apache.torque.generator.control.Controller - Skipping generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/StudentRecordMapper.java because of existingTargetStrategy skip
+2014-02-23 23:29:29,466 [main] INFO  org.apache.torque.generator.control.Controller - Skipping generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/UserRecordMapper.java because of existingTargetStrategy skip
+2014-02-23 23:29:29,466 [main] INFO  org.apache.torque.generator.control.Controller - Skipping generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/UsergroupRecordMapper.java because of existingTargetStrategy skip
+2014-02-23 23:29:29,466 [main] INFO  org.apache.torque.generator.control.Controller - Skipping generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/NoteRecordMapper.java because of existingTargetStrategy skip
+2014-02-23 23:29:29,467 [main] INFO  org.apache.torque.generator.control.Controller - Skipping generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/AbscenceRecordMapper.java because of existingTargetStrategy skip
+2014-02-23 23:29:29,467 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.recordMapperForView
+2014-02-23 23:29:29,467 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:29,482 [main] INFO  org.apache.torque.generator.control.Controller - No start Elements found for path database/all-views/view
+2014-02-23 23:29:29,483 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.baseRecordMapper
+2014-02-23 23:29:29,483 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:29,499 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/BaseStudentRecordMapper.java
+2014-02-23 23:29:29,507 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/BaseUserRecordMapper.java
+2014-02-23 23:29:29,513 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/BaseUsergroupRecordMapper.java
+2014-02-23 23:29:29,517 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/BaseNoteRecordMapper.java
+2014-02-23 23:29:29,522 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/BaseAbscenceRecordMapper.java
+2014-02-23 23:29:29,527 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.baseRecordMapperForView
+2014-02-23 23:29:29,527 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:29,542 [main] INFO  org.apache.torque.generator.control.Controller - No start Elements found for path database/all-views/view
+2014-02-23 23:29:29,542 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.bean
+2014-02-23 23:29:29,543 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:29,558 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/bean/StudentBean.java
+2014-02-23 23:29:29,558 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/bean/UserBean.java
+2014-02-23 23:29:29,558 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/bean/UsergroupBean.java
+2014-02-23 23:29:29,558 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/bean/NoteBean.java
+2014-02-23 23:29:29,559 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/bean/AbscenceBean.java
+2014-02-23 23:29:29,559 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.beanForView
+2014-02-23 23:29:29,559 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:29,574 [main] INFO  org.apache.torque.generator.control.Controller - No start Elements found for path database/all-views/view
+2014-02-23 23:29:29,574 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.baseBean
+2014-02-23 23:29:29,574 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:29,588 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/bean/BaseStudentBean.java
+2014-02-23 23:29:29,588 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/bean/BaseUserBean.java
+2014-02-23 23:29:29,588 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/bean/BaseUsergroupBean.java
+2014-02-23 23:29:29,588 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/bean/BaseNoteBean.java
+2014-02-23 23:29:29,588 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/bean/BaseAbscenceBean.java
+2014-02-23 23:29:29,589 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.baseBeanForView
+2014-02-23 23:29:29,589 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:29,603 [main] INFO  org.apache.torque.generator.control.Controller - No start Elements found for path database/all-views/view
+2014-02-23 23:29:29,603 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.inheritanceBean
+2014-02-23 23:29:29,603 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:29,617 [main] INFO  org.apache.torque.generator.control.Controller - No start Elements found for path database/all-tables/table/column/inheritance
+2014-02-23 23:29:29,617 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.inheritanceBeanForView
+2014-02-23 23:29:29,618 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:29,631 [main] INFO  org.apache.torque.generator.control.Controller - No start Elements found for path database/all-views/view/column/inheritance
+2014-02-23 23:29:29,631 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.mapInit
+2014-02-23 23:29:29,633 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:29,645 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/org/apache/torque/linkage/NappDatabaseMapInit.java
+2014-02-23 23:29:29,645 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.baseMapInit
+2014-02-23 23:29:29,645 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:29,657 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/BaseNappDatabaseMapInit.java
+2014-02-23 23:29:29,657 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.manager
+2014-02-23 23:29:29,657 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:29,671 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/manager/StudentManager.java
+2014-02-23 23:29:29,671 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/manager/UserManager.java
+2014-02-23 23:29:29,671 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/manager/UsergroupManager.java
+2014-02-23 23:29:29,671 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/manager/NoteManager.java
+2014-02-23 23:29:29,672 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/src/main/generated-java/fr/iut2/sil4/data/manager/AbscenceManager.java
+2014-02-23 23:29:29,672 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.managerForView
+2014-02-23 23:29:29,672 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:29,685 [main] INFO  org.apache.torque.generator.control.Controller - No start Elements found for path database/all-views/view
+2014-02-23 23:29:29,685 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.baseManager
+2014-02-23 23:29:29,685 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:29,698 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/manager/base/BaseStudentManager.java
+2014-02-23 23:29:29,699 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/manager/base/BaseUserManager.java
+2014-02-23 23:29:29,699 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/manager/base/BaseUsergroupManager.java
+2014-02-23 23:29:29,699 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/manager/base/BaseNoteManager.java
+2014-02-23 23:29:29,699 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-persistence/fr/iut2/sil4/data/manager/base/BaseAbscenceManager.java
+2014-02-23 23:29:29,699 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.om.baseManagerForView
+2014-02-23 23:29:29,700 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:29,713 [main] INFO  org.apache.torque.generator.control.Controller - No start Elements found for path database/all-views/view
+2014-02-23 23:29:29,715 [main] INFO  org.apache.torque.generator.control.Controller - readConfiguration() : Starting to read configuration files
+2014-02-23 23:29:29,802 [main] INFO  org.apache.torque.generator.control.Controller - readConfiguration() : Configuration read.
+2014-02-23 23:29:29,803 [main] INFO  org.apache.torque.generator.control.Controller - Processing output torque.sql.ddl
+2014-02-23 23:29:29,803 [main] INFO  org.apache.torque.generator.control.Controller - Processing source /home/matthieu/DEV/Java/napp/WebContent/torque/schema/./napp-schema.xml
+2014-02-23 23:29:29,819 [main] INFO  org.apache.torque.generator.control.Controller - Start generation of File /home/matthieu/DEV/Java/napp/WebContent/torque/non-modifiable/generated-sql/napp-schema.sql

@@ -160,6 +160,46 @@ public class Controller  extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
+		case "/edit_abscence": 
+			try {
+				addAbscence(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+		case "/student_remove_admin": 
+			try {
+				removeStudent(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+		case "/student_remove_group": 
+			try {
+				removeGroup(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+		case "/note_remove_admin": 
+			try {
+				removeNote(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+		case "/abscence_remove_admin": 
+			try {
+				removeAbscence(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
 		case "/student_list_admin": 
 			request.setAttribute("listStudents", listStudents());
 			loadJSP("/napp1"+action+".jsp", request, response);
@@ -228,6 +268,8 @@ public class Controller  extends HttpServlet {
 		
 	}
 	
+	/*** STUDENT ***/
+	
 	private void addStudent(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 
@@ -250,6 +292,26 @@ public class Controller  extends HttpServlet {
 		loadJSP("/napp1/student_list_admin.jsp", request, response);
 	}
 	
+	private void removeStudent(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		
+		
+		int studentId = Integer.parseInt(request.getParameter("studentId"));
+		System.out.println("studentId " + studentId);
+		
+		AbscencePeer.doDelete(StudentPeer.retrieveByPK(studentId).getAbscences());
+		NotePeer.doDelete(StudentPeer.retrieveByPK(studentId).getNotes());
+		
+		StudentPeer.doDelete(StudentPeer.retrieveByPK(studentId));
+		UserPeer.doDelete(StudentPeer.retrieveByPK(studentId).getUsers());
+		
+		
+		request.setAttribute("listStudents", listStudents());
+		loadJSP("/napp1/student_list_admin.jsp", request, response);
+	}
+	
+	/*** GROUP ***/
+	
 	private void addGroup(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 
@@ -262,6 +324,21 @@ public class Controller  extends HttpServlet {
 		request.setAttribute("listGroups", listGroups());
 		loadJSP("/napp1/group_list_admin.jsp", request, response);
 	}
+	
+	private void removeGroup(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		
+		int groupId = Integer.parseInt(request.getParameter("groupId"));
+		
+		//UserPeer.doDelete(UsergroupPeer.retrieveByPK(groupId).getStudents(criteria));
+		
+		UsergroupPeer.doDelete(UsergroupPeer.retrieveByPK(groupId));
+
+		request.setAttribute("listGroups", listGroups());
+		loadJSP("/napp1/group_list_admin.jsp", request, response);
+	}
+	
+	/*** NOTES ***/
 	
 	private void addNote(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
@@ -279,6 +356,20 @@ public class Controller  extends HttpServlet {
 		loadJSP("/napp1/notes_list_admin.jsp", request, response);
 	}
 	
+	private void removeNote(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		
+		int noteId = Integer.parseInt(request.getParameter("noteId"));
+		
+		
+		NotePeer.doDelete(NotePeer.retrieveByPK(noteId));
+
+		request.setAttribute("listNotes", listNotes());
+		loadJSP("/napp1/notes_list_admin.jsp", request, response);
+	}
+	
+	/*** ABSENCES ***/
+	
 	private void addAbscence(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		
@@ -293,6 +384,18 @@ public class Controller  extends HttpServlet {
 		new_absc.setMotif(request.getParameter("motif"));
 		new_absc.save();
 		
+		request.setAttribute("listAbscences", listAbscences());
+		loadJSP("/napp1/abscences_list_admin.jsp", request, response);
+	}
+	
+	private void removeAbscence(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		
+		int abscenceId = Integer.parseInt(request.getParameter("abscenceId"));
+		
+		
+		AbscencePeer.doDelete(AbscencePeer.retrieveByPK(abscenceId));
+
 		request.setAttribute("listAbscences", listAbscences());
 		loadJSP("/napp1/abscences_list_admin.jsp", request, response);
 	}

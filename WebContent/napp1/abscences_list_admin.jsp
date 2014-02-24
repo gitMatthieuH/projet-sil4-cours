@@ -34,14 +34,16 @@
 			   		<tr>
 			   			<td><%=absc.getStudent().getFirstname()%> <%=absc.getStudent().getName()%></td>
 			   			<td><%=absc.getDate()%></td>
-			   			<td><%=absc.getMotif()%></td>		
+			   			<td><%=absc.getMotif()%></td>
+			   			<td><a href="abscence_edit_admin?abscenceId=<%=absc.getAbscenceId()%>"><i class="fa fa-pencil-square-o"></i></a></td>
+			   			<td><a href="abscence_remove_admin?abscenceId=<%=absc.getAbscenceId()%>"><i class="fa fa-times"></i></a></td>
 			      	</tr>
 					
 				<% } %>
 			      
 			   </tbody>
 			</table>
-			<a href="abscence_add_admin">Ajouter une absence</a>
+			<a href="abscence_add_admin"><i class="fa fa-plus"></i> Ajouter une absence</a>
 			</div>
 		</div>
 	<jsp:include page="/napp1/include/footer.jsp"/>

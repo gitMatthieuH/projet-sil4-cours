@@ -20,15 +20,15 @@
 				<form role="form" method="get" action="add_note">
 				  <div class="form-group">
 				    <label for="controleId">Contrôle</label>
-				    <input type="text" class="form-control" id="controleId" name="controleId" placeholder="Nom du groupe" required>
+				    <input type="text" class="form-control" id="controleId" name="controleId" placeholder="id du contrôle" required>
 				  </div>
 				  <div class="form-group">
 				    <label for="points">Points</label>
-				    <input type="text" class="form-control" id="points" name="points" placeholder="Nom du groupe" required>
+				    <input type="text" class="form-control" id="points" name="points" placeholder="Points" required>
 				  </div>
 				  <div class="form-group">
 				    <label for="studentId">Etudiant</label>
-				    <input type="text" class="form-control" id="studentId" name="studentId" placeholder="Nom du groupe" required>
+				    <input type="text" class="form-control" id="studentId" name="studentId" placeholder="Id de l'etudiant" required>
 				  </div>
 				  <button type="submit" class="btn btn-default">Ajouter</button>
 				</form>

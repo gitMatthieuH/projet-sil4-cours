@@ -1,0 +1,168 @@
+@font-face {
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lobster'), url(../font/lobster.woff) format('woff');
+}
+
+html,body{
+    height: 100%
+}
+
+body {
+	background-color: #fcf9f9;
+}
+
+.btn[type=submit] {
+	width:100%;
+}
+
+.home .thumbnail {
+	height: 250px;
+	display: block;
+	position: relative;
+	overflow: hidden;
+}
+
+.home .product_image {
+	overflow: hidden;
+}
+
+.home span.new {
+	display: block;
+	position: absolute;
+	top: 15px;
+	right: -30px;
+	padding: 1px 4px;
+	width: 101px;
+	font-size: 10px;
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+	-moz-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	background-color: #990000;
+	transform: rotate(45deg);
+}
+
+.home .title_block {
+	padding-top: 5px;
+	height: 30px;
+	font-size: 15
+	padding-bottom: 0;
+	font-weight: bold;
+}
+
+.home .product_desc a {
+	color: #666;
+}
+
+.home .price {
+	font-weight: bold;
+	font-size: 14px;
+	color: #990000;
+}
+
+.home .lnk_more {
+	display: inline;
+	padding-right: 10px;
+	font-weight: bold;
+	font-size: 10px;
+	color: #0088cc;
+	background: url(../img/arrow_right_1.png) no-repeat 100% 3px;
+}
+
+
+/** MENU **/
+
+.container-hero {
+	background: url(../img/bg-menu.png) no-repeat fixed center top #374953;
+	height: 379px;
+	margin-bottom: 30px;
+}
+
+.container {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.container:before, .container:after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+
+.hero {
+	padding-top: 32px;
+}
+
+.hero {
+	padding-top: 20px;
+	padding-bottom: 80px;
+}
+
+.clearfix:before, .clearfix:after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+
+.hero .pull-left {
+	float: left;
+}
+
+.hero .pull-right {
+	margin-top: 8px;
+}
+
+.hero .pull-right a{
+	margin-right: 8px;
+}
+
+
+.centered-text, .hero-lead, .container-question {
+	text-align: center;
+
+}
+
+.hero-lead img {
+	z-index: 99;
+	margin-top: 35px;
+}
+
+.hero-lead h2 {
+	z-index: 2;
+	text-align: center;
+	color:white;
+	font-family: 'Lobster', normal;
+	font-size: 3em;
+	margin-top: 0;
+	margin-bottom: 35px;
+
+}
+
+.hero-lead .lead {
+	font-family: 'PT Serif Caption', serif;
+}
+
+.color-white, h2, .lead, .feature-lead, .question-header, .btn-link-choose {
+	color: #fff;
+}
+
+small {
+	font-size: 15px;
+	color: #fff;
+}
+
+small a{
+	font-size: 15px;
+	color: #fff;
+}
+
+/** FOOTER **/
+
+.shadow {
+	box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.15);
+}

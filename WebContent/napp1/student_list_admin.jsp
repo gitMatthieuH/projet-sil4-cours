@@ -36,13 +36,15 @@
 		         		<td><%=student.getName()%></td>
 			         	<td><%=student.getGroupId()%></td>
 			         	<th><%=student.getAbsences()%></th>
+			         	<th><a href="student_edit_admin?studentId=<%=student.getGroupId()%>"><i class="fa fa-pencil-square-o"></i></a></td>
+			         	<th><a href="student_remove_admin?studentId=<%=student.getStudentId()%>"><i class="fa fa-times"></i></a></td>
 			      	</tr>
 					
 				<% } %>
 			      
 			   </tbody>
 			</table>
-			<a href="student_add_admin">Ajouter un étudiant</a>
+			<a href="student_add_admin"><i class="fa fa-plus"></i>  Ajouter un étudiant</a>
 			</div>
 		</div>
 	<jsp:include page="/napp1/include/footer.jsp"/>

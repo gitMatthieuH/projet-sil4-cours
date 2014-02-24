@@ -35,13 +35,15 @@
 			   		<tr>
 			   			<td><%=group.getGroupId()%></td>
 		         		<td><%=group.getGroupName()%></td>
+		         		<td><a href="group_edit_admin?groupId=<%=group.getGroupId()%>"><i class="fa fa-pencil-square-o"></i></a></td>
+		         		<td><a href="group_remove_group?groupId=<%=group.getGroupId()%>"><i class="fa fa-times"></i></a></td>
 			      	</tr>
 					
 				<% } %>
 			      
 			   </tbody>
 			</table>
-			<a href="group_add_admin">Ajouter un groupe</a>
+			<a href="group_add_admin"><i class="fa fa-plus"></i>  Ajouter un groupe</a>
 			</div>
 		</div>
 	<jsp:include page="/napp1/include/footer.jsp"/>

@@ -19,7 +19,7 @@
 			<div class="col-md-6 col-md-offset-3">
 		  <%-- Liste des utilisateurs --%>
 			<table class="table">
-				<caption>Abscences</caption>
+				<caption>Notes</caption>
 			   <thead>
 			      <tr>
 			         <th>Contrôle</th>
@@ -40,7 +40,6 @@
 			      
 			   </tbody>
 			</table>
-			<a href="abscence_add_admin">Ajouter une abscence</a>
 			</div>
 		</div>
 	<jsp:include page="/napp1/include/footer.jsp"/>

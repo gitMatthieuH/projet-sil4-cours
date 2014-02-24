@@ -24,4 +24,11 @@ public class StudentPeer
 		return doSelect(crit);
 	}
 	
+	public static void delete(int id) throws Exception {
+		Criteria crit = new Criteria();	
+		crit.and(STUDENT_ID,id,Criteria.EQUAL);
+		
+		doDelete(crit);
+	}
+	
 }

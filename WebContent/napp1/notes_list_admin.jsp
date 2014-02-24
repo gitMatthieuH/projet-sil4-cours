@@ -33,13 +33,16 @@
 			         	<td><%=note.getControleId()%></td>
 		         		<td><%=note.getPoints()%></td>
 			         	<th><%=note.getStudent().getFirstname()%> <%=note.getStudent().getName()%></th>
+			         	<th><%=note.getStudent().getFirstname()%> <%=note.getStudent().getName()%></th>
+			         	<th><a href="note_edit_admin?noteId=<%=note.getNoteId()%>"><i class="fa fa-pencil-square-o"></i></a></th>
+			         	<th><a href="note_remove_admin?noteId=<%=note.getNoteId()%>"><i class="fa fa-times"></i></a></th>
 			      	</tr>
 					
 				<% } %>
 			      
 			   </tbody>
 			</table>
-			<a href="note_add_admin">Ajouter une note</a>
+			<a href="note_add_admin"><i class="fa fa-plus"></i>  Ajouter une note</a>
 			</div>
 		</div>
 	<jsp:include page="/napp1/include/footer.jsp"/>
