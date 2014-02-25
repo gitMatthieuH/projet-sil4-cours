@@ -2,6 +2,7 @@ package fr.iut2.sil4.data;
 
 import java.util.List;
 
+import org.apache.torque.TorqueException;
 import org.apache.torque.criteria.Criteria;
 
 
@@ -23,5 +24,23 @@ public  class Student
     /** Serial version */
     private static final long serialVersionUID = 1389020353919L;
 
-
+    public float getMoyenne() {
+    	int total = 0;
+    	float moy = 0;
+    	
+    	try {
+    		if(this.getNotes().size() > 0){
+				for(Note note : this.getNotes()) {
+					total += note.getPoints();
+				}
+				moy = (float) (total / (this.getNotes().size() * 1.0));
+    		}
+		} catch (TorqueException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+		return moy;
+    	
+    }
 }

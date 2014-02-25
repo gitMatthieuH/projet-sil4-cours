@@ -33,7 +33,6 @@ drop table if exists abscence;
 CREATE TABLE student
 (
     student_id INTEGER NOT NULL AUTO_INCREMENT,
-    absences INTEGER NOT NULL,
     firstname VARCHAR(128) NOT NULL,
     name VARCHAR(128) NOT NULL,
     group_id INTEGER NOT NULL,

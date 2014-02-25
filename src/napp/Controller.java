@@ -128,6 +128,10 @@ public class Controller  extends HttpServlet {
 			request.getSession().removeAttribute("token");
 			loadJSP("/napp1/accueil.jsp", request, response);
 			break;
+		case "/student_add_admin": 	
+			request.setAttribute("listGroups", listGroups());
+			loadJSP("/napp1"+action+".jsp", request, response);
+			break;
 		case "/add_group": 
 			try {
 				addGroup(request, response);
@@ -136,7 +140,7 @@ public class Controller  extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		case "/add_student": 
+		case "/add_student":
 			try {
 				addStudent(request, response);
 			} catch (Exception e) {
@@ -200,8 +204,17 @@ public class Controller  extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-		case "/student_list_admin": 
+		case "/group_remove_admin": 
+			try {
+				removeGroup(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+		case "/student_list_admin":
 			request.setAttribute("listStudents", listStudents());
+			request.setAttribute("listAbscences", listAbscences());
 			loadJSP("/napp1"+action+".jsp", request, response);
 			break;
 		case "/group_list_admin": 
@@ -214,6 +227,7 @@ public class Controller  extends HttpServlet {
 			break;
 		case "/abscences_list_admin": 
 			request.setAttribute("listAbscences", listAbscences());
+			request.setAttribute("listGroups", listGroups());
 			loadJSP("/napp1"+action+".jsp", request, response);
 			break;
 		case "/student_admin": 
@@ -299,11 +313,15 @@ public class Controller  extends HttpServlet {
 		int studentId = Integer.parseInt(request.getParameter("studentId"));
 		System.out.println("studentId " + studentId);
 		
-		AbscencePeer.doDelete(StudentPeer.retrieveByPK(studentId).getAbscences());
-		NotePeer.doDelete(StudentPeer.retrieveByPK(studentId).getNotes());
+		if (!StudentPeer.retrieveByPK(studentId).getAbscences().isEmpty())
+			AbscencePeer.doDelete(StudentPeer.retrieveByPK(studentId).getAbscences());
 		
-		StudentPeer.doDelete(StudentPeer.retrieveByPK(studentId));
+		if (!StudentPeer.retrieveByPK(studentId).getNotes().isEmpty())
+			NotePeer.doDelete(StudentPeer.retrieveByPK(studentId).getNotes());
+		
 		UserPeer.doDelete(StudentPeer.retrieveByPK(studentId).getUsers());
+		StudentPeer.doDelete(StudentPeer.retrieveByPK(studentId));
+		
 		
 		
 		request.setAttribute("listStudents", listStudents());
@@ -329,8 +347,6 @@ public class Controller  extends HttpServlet {
 			HttpServletResponse response) throws Exception {
 		
 		int groupId = Integer.parseInt(request.getParameter("groupId"));
-		
-		//UserPeer.doDelete(UsergroupPeer.retrieveByPK(groupId).getStudents(criteria));
 		
 		UsergroupPeer.doDelete(UsergroupPeer.retrieveByPK(groupId));
 

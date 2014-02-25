@@ -4,12 +4,13 @@
 <%-- Directives de page import --%>
 <%@ page import="java.util.*"%>
 <%@ page import="org.apache.torque.criteria.Criteria"%>
-
+<%@ page import="fr.iut2.sil4.data.Usergroup"%>
+<jsp:include page="/napp1/include/libraries.jsp"/>
+<jsp:useBean id="listGroups" type="java.util.List<fr.iut2.sil4.data.Usergroup>" scope="request"/>
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title><%= getServletContext().getInitParameter("title")%></title>
-		<jsp:include page="/napp1/include/libraries.jsp"/>
 	</head>
 	<body>
 		<div class="row">
@@ -31,7 +32,11 @@
 				  </div>
 				  <div class="form-group">
 				    <label for="groupid">Groupe</label>
-				    <input type="text" class="form-control" id="groupid" name="groupid" placeholder="Nom du groupe" required>
+				    <select name="groupid" class="form-control" required>
+						<% for (Usergroup group : listGroups) { %>
+						<option value="<%=group.getGroupId()%>"><%=group.getGroupName()%></option>
+						<% } %>
+					</select>
 				  </div>
 				  <div class="form-group">
 				    <label for="passwd">Mot de passe</label>

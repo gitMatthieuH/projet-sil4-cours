@@ -36,7 +36,7 @@
 			   			<td><%=group.getGroupId()%></td>
 		         		<td><%=group.getGroupName()%></td>
 		         		<td><a href="group_edit_admin?groupId=<%=group.getGroupId()%>"><i class="fa fa-pencil-square-o"></i></a></td>
-		         		<td><a href="group_remove_group?groupId=<%=group.getGroupId()%>"><i class="fa fa-times"></i></a></td>
+		         		<td><a href="group_remove_admin?groupId=<%=group.getGroupId()%>"><i class="fa fa-times"></i></a></td>
 			      	</tr>
 					
 				<% } %>
