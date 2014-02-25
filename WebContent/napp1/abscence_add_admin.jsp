@@ -4,7 +4,8 @@
 <%-- Directives de page import --%>
 <%@ page import="java.util.*"%>
 <%@ page import="org.apache.torque.criteria.Criteria"%>
-
+<%@ page import="fr.iut2.sil4.data.Student"%>
+<jsp:useBean id="listStudents" type="java.util.List<fr.iut2.sil4.data.Student>" scope="request"/>
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -28,7 +29,11 @@
 				  </div>
 				  <div class="form-group">
 				    <label for="studentId">Etudiant</label>
-				    <input type="text" class="form-control" id="studentId" name="studentId" placeholder="Id de l'étudiant" required>
+				    <select name="studentId" class="form-control" required>
+						<% for (Student student : listStudents) { %>
+						<option value="<%=student.getGroupId()%>"><%=student.getFirstname()%> <%=student.getName()%></option>
+						<% } %>
+					</select>
 				  </div>
 				  <button type="submit" class="btn btn-default">Ajouter</button>
 				</form>

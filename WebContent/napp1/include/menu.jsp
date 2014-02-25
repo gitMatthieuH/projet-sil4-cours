@@ -5,6 +5,12 @@
 			<div class="clearfix">	
 				<div class="pull-right">
 					<small>
+						<a href="index">
+							<i class="fa fa-user"></i>
+							Fiche personnel
+						</a>
+					</small>
+					<small>
 						<a href="notes">
 							<span class="glyphicon glyphicon-list"></span>
 							Notes

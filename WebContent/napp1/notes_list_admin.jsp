@@ -33,7 +33,6 @@
 			         	<td><%=note.getControleId()%></td>
 		         		<td><%=note.getPoints()%></td>
 			         	<th><%=note.getStudent().getFirstname()%> <%=note.getStudent().getName()%></th>
-			         	<th><%=note.getStudent().getFirstname()%> <%=note.getStudent().getName()%></th>
 			         	<th><a href="note_edit_admin?noteId=<%=note.getNoteId()%>"><i class="fa fa-pencil-square-o"></i></a></th>
 			         	<th><a href="note_remove_admin?noteId=<%=note.getNoteId()%>"><i class="fa fa-times"></i></a></th>
 			      	</tr>

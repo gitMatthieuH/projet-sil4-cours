@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
+import org.apache.torque.NoRowsException;
+import org.apache.torque.TooManyRowsException;
 import org.apache.torque.Torque;
 import org.apache.torque.TorqueException;
 
@@ -81,6 +83,7 @@ public class Controller  extends HttpServlet {
 		
 		
 		User user = null;
+	
 		
 		switch (action) 
 		{ 
@@ -128,10 +131,36 @@ public class Controller  extends HttpServlet {
 			request.getSession().removeAttribute("token");
 			loadJSP("/napp1/accueil.jsp", request, response);
 			break;
+		case "/index":
+			String username = (String) request.getSession().getAttribute("token");
+			Student student = null;
+			try {
+				student = UserPeer.retrieveByPK(username).getStudent();
+			} catch (NoRowsException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (TooManyRowsException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (TorqueException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			request.setAttribute("student", student);
+			loadJSP("/napp1/index.jsp", request, response);
+			break;
 		case "/student_add_admin": 	
 			request.setAttribute("listGroups", listGroups());
 			loadJSP("/napp1"+action+".jsp", request, response);
 			break;
+		case "/abscence_add_admin": 
+			request.setAttribute("listStudents", listStudents());
+			loadJSP("/napp1"+action+".jsp", request, response);
+		break;
+		case "/note_add_admin": 
+			request.setAttribute("listStudents", listStudents());
+			loadJSP("/napp1"+action+".jsp", request, response);
+		break;
 		case "/add_group": 
 			try {
 				addGroup(request, response);
@@ -273,6 +302,8 @@ public class Controller  extends HttpServlet {
 			if (isAdmin) {
 				loadJSP("/napp1/index_admin.jsp", request, response);
 			} else {
+				Student student = UserPeer.retrieveByPK(username).getStudent();
+				request.setAttribute("student", student);
 				loadJSP("/napp1/index.jsp", request, response);
 			}
 		} else {
